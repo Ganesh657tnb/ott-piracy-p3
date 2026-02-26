@@ -14,7 +14,7 @@ from Cryptodome.Util.Padding import pad, unpad
 DB_NAME = "guardian_final.db" 
 UPLOAD_DIR = "master_videos"
 SECRET_KEY = "My16ByteSecret!!" 
-GAIN_FACTOR = 0.003 # Noise-ah mask panna safe value
+GAIN_FACTOR = 0.02 # Noise-ah mask panna safe value
 
 if not os.path.exists(UPLOAD_DIR):
     os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -208,4 +208,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
