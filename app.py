@@ -82,7 +82,7 @@ def embed_watermark(input_wav, output_wav, user_id):
             watermark[b_start:b_end] = val * pn[b_start:b_end]
 
     # Result
-    result = np.clip(audio_samples + (0.02 * watermark * np.max(np.abs(audio_samples))), -32768, 32767).astype(np.int16)
+    result = np.clip(audio_samples + (0.01 * watermark * np.max(np.abs(audio_samples))), -32768, 32767).astype(np.int16)
     with wave.open(output_wav, 'wb') as out:
         out.setparams(params)
         out.writeframes(result.tobytes())
@@ -204,4 +204,5 @@ def main():
         st.table(pd.read_sql_query("SELECT id, username, email, phone FROM users", conn))
 
 if __name__ == "__main__":
+
     main()
