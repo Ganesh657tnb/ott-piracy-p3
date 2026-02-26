@@ -14,7 +14,7 @@ from Cryptodome.Util.Padding import pad, unpad
 DB_NAME = "guardian_v3.db" # Database name (v3 nu mathirukaen fresh-ah start panna)
 UPLOAD_DIR = "master_videos" # Original videos save aaga
 SECRET_KEY = "My16ByteSecret!!" # AES-128-ku 16 characters key
-GAIN_FACTOR = 0.007 # Watermark noise level (romba kammiya vachurukaen)
+GAIN_FACTOR = 0.004 # Watermark noise level (romba kammiya vachurukaen)
 
 # Folder illana create pannurom
 if not os.path.exists(UPLOAD_DIR):
@@ -225,3 +225,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
