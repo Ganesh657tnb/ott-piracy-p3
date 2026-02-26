@@ -10,9 +10,11 @@ import pandas as pd
 from Cryptodome.Cipher import AES
 from Cryptodome.Util.Padding import pad, unpad
 
-# --- 1. SETUP & CONFIGURATION ---
-DB_NAME = "guardian.db"
-UPLOAD_DIR = "master_videos"
+if not os.path.exists(UPLOAD_DIR):
+    try:
+        os.makedirs(UPLOAD_DIR)
+    except Exception as e:
+        st.error(f"Folder creation failed: {e}")
 # AES-128-ku 16 characters key irundha podhum
 SECRET_KEY = "My16ByteSecret!!" 
 GAIN_FACTOR = 0.007 # Noise level (Viewers-ku kekkaadhu)
@@ -121,3 +123,4 @@ def extract_watermark(leaked_wav):
 
 # --- [STREAMLIT UI CODE REMAINS THE SAME] ---
 # (Pazhaya code-la irundha main() function logic-ah inga use panniko)
+
