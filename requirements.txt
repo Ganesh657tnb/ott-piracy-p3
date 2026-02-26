@@ -2,4 +2,4 @@ streamlit
 numpy
 pandas
 bcrypt
-pycryptodome
+pycryptodomex
