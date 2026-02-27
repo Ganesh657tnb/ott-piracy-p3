@@ -76,7 +76,7 @@ def embed_watermark(input_wav, output_wav, user_id):
 
     # Solid Scaling for 15s clips
     max_amp = np.max(np.abs(audio_samples)) if np.max(np.abs(audio_samples)) > 0 else 32767
-    result = audio_samples + (0.03 * watermark * max_amp) 
+    result = audio_samples + (0.02 * watermark * max_amp) 
     result = np.clip(result, -32768, 32767).astype(np.int16)
     
     with wave.open(output_wav, 'wb') as out:
@@ -186,5 +186,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
